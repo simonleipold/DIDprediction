@@ -11,6 +11,7 @@ wantedFiles = []
 for f in rawFiles:
     if 'tempConn' in f:
         wantedFiles.append(f) # exclude unwanted files from filelist
+
 connList = sorted(wantedFiles)
 
 targets = []
@@ -26,4 +27,4 @@ for i in range(0,len(connList)):
     flatTemp = temp[np.triu_indices(n = temp.shape[1], k = 1)]
     samples[i] = flatTemp
 #print(samples)
-clf = svm.SVC(gamma=0.001, C=100.)
+clf = svm.SVC(gamma=0.001, C=1.)
